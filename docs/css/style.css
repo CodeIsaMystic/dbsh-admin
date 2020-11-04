@@ -1,0 +1,284 @@
+/* ========================== */
+/*    LIGHT THEME COLORS     */
+/* ======================== */
+:root {
+  --mainOrange: #F9930E;
+  --mainSemiDarkOrange: #563000;
+  --mainSemiDarkBlue: rgb(9, 5, 60);
+  --mainDarkBlue: rgb(3, 1, 28);
+  --mainLightGray: rgb(246, 246, 255);
+  --mainTextColor: #F7F7F7;
+}
+
+
+/* ========================== */
+/*     BASICS SETTINGS       */
+/* ======================== */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /*box-sizing: inherit;*/
+
+}
+
+html {
+  font-size: 50%;
+
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  /*position: relative;*/
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  /*line-height: 1.7;*/
+  color: var(--mainSemiDarkBlue);
+  background-image: linear-gradient(to right, rgba(3, 1, 28, 0.15), rgba(3, 1, 28, 0.65)), url(../img/bg-admin.jpg);
+  /*background-size: cover;*/
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a {
+  font-size: inherit;
+  text-decoration: none;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+
+/*  =Box-Shadow   */
+.box-shadow {
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, .3);
+}
+
+/*   =Badge    */
+.badge-blue {
+  background-color: var(--mainSemiDarkBlue);
+  color: var(--mainTextColor);
+  font-weight: 300;
+}
+
+/*   =Container    warning
+.container,
+.container-sm {
+  max-width: 100%;
+}*/
+
+
+
+/* ========================== */
+/*         LINKS             */
+/* ======================== */
+.link {
+  transition: all .2s;
+}
+
+.link:hover {
+  color: var(--mainOrange);
+}
+
+.link--light {
+  color: var(--mainLightGray);
+}
+
+.link--orange {
+  color: var(--mainSemiDarkOrange);
+}
+
+.link--dark {
+  color: var(--mainDarkBlue);
+}
+
+/* ========================== */
+/*    BACKGROUND COLOR       */
+/* ======================== */
+.bg--light {
+  background-color: rgb(255, 255, 255);
+}
+
+/* ========================== */
+/*         BUTTON            */
+/* =========================*/
+.button {
+  display: inline-block;
+  padding: .5rem 1.4rem;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all .2s;
+}
+
+
+.button--thin {
+  padding: .4rem 1.4rem;
+}
+
+.button--orange {
+  background-color: var(--mainOrange);
+  color: var(--mainTextColor);
+}
+
+.button--orange:hover {
+  color: var(--mainDarkBlue);
+}
+
+
+/* ========================== */
+/*        HEADINGS           */
+/* ======================== */
+.heading-primary {
+  text-transform: uppercase;
+  font-size: 3.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--mainTextColor);
+}
+
+@media screen and (min-width: 466px) {
+  .heading-primary {
+    font-size: 2.7rem;
+    letter-spacing: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .heading-primary {
+    font-size: 3.3rem;
+    letter-spacing: 15px;
+  }
+}
+
+.heading-secondary {
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 4.5rem;
+  /*color: var(--mainTextColor);*/
+  color: var(--mainDarkBlue);
+}
+
+
+/* ========================== */
+/*         HEADER            */
+/* =========================*/
+/*  =Navigation Components */
+.navbar-flexColOnLg {
+  flex-direction: column;
+  position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar-flexColOnLg {
+    flex-direction: row;
+  }
+}
+
+/*   =Navbar-logo  */
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar-logo {
+    padding: 15px 0 15px 15px;
+  }
+}
+
+/*  =Navbar Collapse */
+.navbar-collapse {
+  flex-grow: 0;
+  /*transition: all .4s ease-out;*/
+}
+
+.navbar-collapse ul {
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+/*  =Navbar--login  */
+.navbar-collapse ul:last-of-type {
+  margin-left: 1.5rem;
+  flex-direction: row-reverse;
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar-collapse ul:last-of-type {
+    margin-left: 3rem;
+    flex-direction: row;
+  }
+}
+
+.navbar-collapse ul:last-of-type li:first-of-type {
+  height: 100%;
+}
+
+/*  =Navbar-toggler Icon  */
+.toggle-btn {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  padding: 0;
+}
+
+.toggle-btn:active,
+.toggle-btn:focus {
+
+  outline: 1px solid var(--mainOrange);
+  border: 0;
+}
+
+.navbar-toggler-icon {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+}
+
+.navbar-toggler-icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 2px;
+
+  /*border: 1px solid var(--mainOrange);*/
+}
+
+
+
+/* ========================== */
+/*          CARDS            */
+/* ======================== */
+main .row div .card,
+main .row div .card .card-header,
+main .row div .card .card-header:first-child {
+  border-bottom: none;
+  border-radius: 0;
+  border: none;
+}
+
+main .row div .card .card-header {
+  padding: 0;
+}
+
+/* ========================== */
+/*          MAIN             */
+/* =========================*/
