@@ -1,5 +1,6 @@
-/* ========================== */
-/*    LIGHT THEME COLORS     */
+/* =========================== */
+/*    LIGHT THEME COLORS      */
+/*       &  FONT SIZE        */
 /* ======================== */
 :root {
   --mainOrange: #F9930E;
@@ -8,6 +9,9 @@
   --mainDarkBlue: rgb(3, 1, 28);
   --mainLightGray: rgb(246, 246, 255);
   --mainTextColor: #F7F7F7;
+
+  --textFontSize: 1.6rem;
+  --linkFontSize: 1.4rem;
 }
 
 
@@ -20,13 +24,10 @@
 *::before {
   margin: 0;
   padding: 0;
-  /*box-sizing: inherit;*/
-
 }
 
 html {
   font-size: 50%;
-
 }
 
 @media screen and (min-width: 768px) {
@@ -36,26 +37,29 @@ html {
 }
 
 body {
-  /*position: relative;*/
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 1.6rem;
-  /*line-height: 1.7;*/
+  font-size: var(--textFontSize);
   color: var(--mainSemiDarkBlue);
-  background-image: linear-gradient(to right, rgba(3, 1, 28, 0.15), rgba(3, 1, 28, 0.65)), url(../img/bg-admin.jpg);
-  /*background-size: cover;*/
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .45), rgba(0, 0, 0, .95)), url(../img/bg-admin.jpg);
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
 }
-
+/*
 a {
-  font-size: inherit;
   text-decoration: none;
-}
+}*/
 
 label {
   margin-bottom: 0;
+}
+
+
+/*  =Font-size  */
+.text-size {
+  font-size: var(--textFontSize);
 }
 
 
@@ -71,18 +75,13 @@ label {
   font-weight: 300;
 }
 
-/*   =Container    warning
-.container,
-.container-sm {
-  max-width: 100%;
-}*/
-
 
 
 /* ========================== */
 /*         LINKS             */
 /* ======================== */
 .link {
+  font-size: var(--linkFontSize);
   transition: all .2s;
 }
 
@@ -141,7 +140,7 @@ label {
 /* ======================== */
 .heading-primary {
   text-transform: uppercase;
-  font-size: 3.2rem;
+  font-size: 2.5rem;
   font-weight: 400;
   letter-spacing: 2px;
   color: var(--mainTextColor);
@@ -150,14 +149,13 @@ label {
 @media screen and (min-width: 466px) {
   .heading-primary {
     font-size: 2.7rem;
-    letter-spacing: 10px;
+    letter-spacing: 5px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .heading-primary {
     font-size: 3.3rem;
-    letter-spacing: 15px;
   }
 }
 
@@ -166,7 +164,6 @@ label {
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 4.5rem;
-  /*color: var(--mainTextColor);*/
   color: var(--mainDarkBlue);
 }
 
@@ -191,8 +188,7 @@ label {
   display: flex;
   flex-direction: column;
   padding: 15px;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
+  font-family: 'Montserrat', "Roboto", sans-serif;
   background-color: transparent;
 }
 
@@ -202,10 +198,45 @@ label {
   }
 }
 
+.navbar-logo svg {
+  width: 180px;
+  height: auto;
+}
+
+@media screen and (min-width: 466px) {
+  .navbar-logo svg {
+    width: 240px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-logo svg {
+    width: 100%;
+  }
+}
+
+/*  =Nav link  */
+.nav-link {
+  padding: 0 1rem;
+  height: 2.8rem;
+}
+
+/*  =Dropdown menu  */
+.dropdown:hover  .dropdown-item,
+.dropdown:hover .dropdown-menu {
+  display: block;
+  
+}
+
+.dropdown-item {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+}
+
+
 /*  =Navbar Collapse */
 .navbar-collapse {
   flex-grow: 0;
-  /*transition: all .4s ease-out;*/
 }
 
 .navbar-collapse ul {
@@ -231,36 +262,38 @@ label {
   height: 100%;
 }
 
-/*  =Navbar-toggler Icon  */
-.toggle-btn {
+/*  =Navbar-toggler  */
+.navbar-toggler {
   position: absolute;
-  top: 4rem;
-  right: 4rem;
+  top: 20px;
+  right: 7px;
+}
+
+
+@media screen and (min-width: 466px) {
+  .navbar-toggler {
+    top: 30px;
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-toggler {
+    top: 35%;
+    right: 40px;
+  }
+}
+
+.toggle-btn {
   padding: 0;
 }
 
 .toggle-btn:active,
 .toggle-btn:focus {
-
-  outline: 1px solid var(--mainOrange);
   border: 0;
+  outline: none;
 }
 
-.navbar-toggler-icon {
-  position: relative;
-  width: 3rem;
-  height: 3rem;
-}
-
-.navbar-toggler-icon svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding-top: 2px;
-
-  /*border: 1px solid var(--mainOrange);*/
-}
 
 
 
@@ -279,6 +312,55 @@ main .row div .card .card-header {
   padding: 0;
 }
 
+
 /* ========================== */
-/*          MAIN             */
+/*          FOOTER           */
+/* ======================== */
+footer a svg {
+  width: 35px;
+  height: 35px;
+}
+
+footer > a > p {
+  font-size: 1rem;
+}
+
+footer > p {
+  font-size: 1.2rem;
+}
+
+/* ========================== */
+/*         MODAL             */
 /* =========================*/
+
+.mod {
+  position: relative;
+  max-width: 440px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.mod-pos {
+  max-width: 300px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media screen and (min-width: 576px) {
+  .mod-pos {
+    max-width: 450px;
+  }  
+}
+
+
+
+
+
+
+
