@@ -16,8 +16,8 @@
   <!-- CSS  -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!--  Page title  -->
-  <title>Ajouter un contact - D.B.S.H</title>
+  <!--Page title  -->
+  <title>Liste de témoignages - D.B.S.H</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
           </svg>
         </a>
 
-        <!--   TOGGLE BUTTON  -->
+        <!--  TOGGLE BUTTON  -->
         <button class="navbar-toggler toggle-btn" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon">
             <svg width="2.4em" height="2.4em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor"
@@ -57,14 +57,14 @@
             <li class="nav-item px-2 <?php if (strpos($view,'category') !== false) : ?>active<?php endif; ?>">
               <a href="index.html" class="nav-link link link--dark">Accueil</a>
             </li>
-            <li class="nav-item px-2 dropdown <?php if ($view == 'contact') : ?>active<?php endif; ?>">
+            <li class="nav-item px-2 dropdown <?php if (strpos($view,'category') !== false) : ?>active<?php endif; ?>">
               <a href="#" class="nav-link link link--dark">Contacts</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item link link--dark" href="contactAdd.html">Ajouter un contact</a>
                 <a class="dropdown-item link link--dark" href="contactList.html">Liste de contacts</a>
               </div>
             </li>
-            <li class="nav-item px-2 dropdown <?php if (strpos($view,'category') !== false) : ?>active<?php endif; ?>">
+            <li class="nav-item px-2 dropdown <?php if ($view == 'contact') : ?>active<?php endif; ?>">
               <a href="#" class="nav-link link link--dark">Témoignages</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item link link--dark" href="testimAdd.html">Ajouter un témoignage</a>
@@ -87,186 +87,169 @@
     </div>
   </header>
 
-  <!--   MAIN    -->
+  <!--   MAIN COL    -->
   <main class="container mt-3">
+
+    <!--  TITLE TESTIMONIAL LIST  -->
+    <div class="row text-center">
+      <div class="col-12 px-0 mt-5">
+        <h1 class="heading-primary my-3 pb-2">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list-task" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z" />
+            <path
+              d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z" />
+            <path fill-rule="evenodd"
+              d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z" />
+          </svg>
+          Liste de témoignages
+        </h1>
+      </div>
+      <div class="col-12 text-white text-center pb-4">
+        <p>Dans cette partie, vous pouver visualiser votre liste de témoignages. Sont stockés ici tout les témoignages
+          de votre base de données. La section "publié" vous rensigne de l'état de votre contenu, s'il est/sera en ligne
+          ou pas.
+        </p>
+      </div>
+    </div>
+
+
+    <!--  ACCESS FAST  -->
     <div class="row">
-      <!--  TITLE ADD CONTACT  -->
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-sm-12 ml-lg-5 mt-5">
-            <h1 class="heading-primary ml-2 my-3 pb-2">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-plus-fill mb-3" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                  d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-              </svg>
-              Ajouter un contact
-            </h1>
-          </div>
-          <div class="col-sm-12 text-white text-center pb-4">
-            <p>Dans cette partie, vous pouvez ajouter un contact, écrire une note, sélectionner si
-              votre
-              contact
-              est déjà "client" ou bien s'il veux être inscrit à la "Newsletter", puis l'enregistrer dans votre base de
-              données.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <!--  ACCESS FAST  -->
-        <div class="row">
-          <div class="col-12">
-            <div class="card py-4 mb-3 mb-lg-5 box-shadow">
-              <!--  ACCESS FAST CARD HEADER  -->
-              <div class="card-header bg--light text-center">
-                <h4 class="heading-secondary">Votre site web</h4>
-              </div>
-              <!--  ACCESS FAST CARD BODY  -->
-              <div class="card-body">
-                <form class="text-center" action="#">
-                  <label for="#" class="text-center mb-lg-2 mr-3 mr-lg-0">Accédez directement à votre site
-                    web...</label>
-                  <input type="submit" value="Lien vers votre site web" class="button button--thin button--orange" />
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--  SHORTCUTS  -->
-        <div class="row ">
-          <div class="col-12">
-            <div class="card py-4 mb-3 box-shadow">
-              <!--  SHORTCUTS CARD HEADER  -->
-              <div class="card-header bg--light text-center">
-                <h4 class="heading-secondary pb-2 m-0">Raccourcis</h4>
-              </div>
-              <!--  SHORTCUTS CARD BODY  -->
-              <div class="card-body">
-                <div class="row">
-                  <ul class="list-unstyled text-center text-lg-left col-6 col-lg-12">
-                    <li>
-                      <a href="contactAdd.html" class="link link--orange mb-2">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-plus-fill"
-                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd"
-                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-                        </svg>
-                        Ajouter un contact
-                      </a>
-                    </li>
-                    <li>
-                      <a href="contactList.html" class="link link--orange mb-4 ml-2">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill"
-                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd"
-                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
-                        </svg>
-                        Liste de contacts
-                      </a>
-                    </li>
-                  </ul>
-
-                  <ul class="list-unstyled text-center text-lg-left col-6 col-lg-12">
-                    <li>
-                      <a href="testimAdd.html" class="link link--orange mb-2">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right-quote"
-                          fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd"
-                            d="M2 1h12a1 1 0 0 1 1 1v11.586l-2-2A2 2 0 0 0 11.586 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z" />
-                          <path fill-rule="evenodd"
-                            d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z" />
-                        </svg>
-                        Ajouter un témoignage
-                      </a>
-                    </li>
-                    <li>
-                      <a href="testimList.html" class="link link--orange mb-4 ml-2">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list-task" fill="currentColor"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd"
-                            d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z" />
-                          <path
-                            d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z" />
-                          <path fill-rule="evenodd"
-                            d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z" />
-                        </svg>
-                        Liste de témoignages
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--   CARD ADD A CONTACT   -->
-      <div class="col-lg-8">
-        <div class="card py-4 box-shadow">
-          <!--  CONTACT CARD HEADER  -->
+      <div class="col-12">
+        <div class="card py-4 mb-3 box-shadow">
+          <!--  ACCESS FAST CARD HEADER  -->
           <div class="card-header bg--light text-center">
-            <h4 class="heading-secondary pb-1 m-0">Ajouter un contact</h4>
+            <h4 class="heading-secondary">Votre site web</h4>
           </div>
-          <!--  CONTACT CARD BODY  -->
+          <!--  ACCESS FAST CARD BODY  -->
           <div class="card-body">
-            <form>
-              <div class="form-group">
-                <label for="lastname">Nom</label>
-                <input type="text" class="form-control" placeholder="Nom" />
-              </div>
-              <div class="form-group">
-                <label for="firstname">Prénom</label>
-                <input type="text" class="form-control" placeholder="Prénom" />
-              </div>
-              <div class="row">
-                <div class="col-6 form-group">
-                  <label for="firstname">Email</label>
-                  <input type="email" class="form-control" placeholder="Email" />
-                </div>
-                <div class="col-6 form-group">
-                  <label for="firstname">Téléphone</label>
-                  <input type="tel" class="form-control" placeholder="Téléphone" />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="noteBody">Notes / Texte</label>
-                <textarea name="editor1" class="form-control"></textarea>
-              </div>
+            <form class="text-center" action="#">
+              <label for="#" class="text-center mb-2 mr-3">Accédez directement à votre site
+                web...</label>
+              <input type="submit" value="Lien vers votre site web" class="button button--thin button--orange" />
             </form>
-          </div>
-          <!--  CONTACT CARD FOOTER  -->
-          <div class="card-footer row">
-            <div class="input-group text-center col-3 col-lg-4 px-0 ml-4">
-              <div class="input-group-prepend ">
-                <div class="input-group-text">
-                  <input type="checkbox" name="client">
-                  <label for="client" class="ml-3 mr-5">Client</label>
-                </div>
-              </div>
-            </div>
-            <div class="input-group text-center col-3 col-lg-4 px-0">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <input type="checkbox" name="newsletter">
-                  <label for="newsletter" class="ml-3 mr-2">Newsletter</label>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 col-lg-4">
-              <label for="submit"></label>
-              <button type="submit" name="submit" class="button button--orange d-block ml-4">Enregistrer</button>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
-  </main>
+
+    <!--  SHORTCUTS  -->
+    <div class="row ">
+      <div class="col-12">
+        <div class="card py-4 mb-3 box-shadow">
+          <!--  SHORTCUTS CARD HEADER  -->
+          <div class="card-header bg--light text-center">
+            <h4 class="heading-secondary pb-2 m-0">Raccourcis</h4>
+          </div>
+          <!--  SHORTCUTS CARD BODY -->
+          <div class="card-body">
+            <div class="row">
+              <ul class="list-unstyled text-center col-6">
+                <li>
+                  <a href="contactAdd.html" class="link link--orange mb-2">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-plus-fill" fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                    </svg>
+                    Ajouter un contact
+                  </a>
+                </li>
+                <li>
+                  <a href="contactList.html" class="link link--orange mb-4 ml-2">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill"
+                      fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                    Liste de contacts
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="list-unstyled text-center col-6">
+                <li>
+                  <a href="testimAdd.html" class="link link--orange mb-2">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right-quote" fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M2 1h12a1 1 0 0 1 1 1v11.586l-2-2A2 2 0 0 0 11.586 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z" />
+                      <path fill-rule="evenodd"
+                        d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z" />
+                    </svg>
+                    Ajouter un témoignage
+                  </a>
+                </li>
+                <li>
+                  <a href="testimList.html" class="link link--orange mb-4 ml-2">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list-task" fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                        d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z" />
+                      <path
+                        d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z" />
+                      <path fill-rule="evenodd"
+                        d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z" />
+                    </svg>
+                    Liste de témoignages
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- TESTIMONIAL LIST TABLE  -->
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-hover mt-3 box-shadow bg--light text-center">
+          <!--  TABLE HEAD  -->
+          <thead class="pb-1 m-0">
+            <tr>
+              <th class="heading-secondary text-center border-bottom-0" scope="col">Nom</th>
+              <th class="heading-secondary text-center border-bottom-0" scope="col">Titre</th>
+              <th class="heading-secondary text-center border-bottom-0" scope="col">Sous-titre</th>
+              <th class="heading-secondary text-center border-bottom-0" scope="col">Fiche</th>
+              <th class="heading-secondary text-center border-bottom-0" scope="col"></th>
+            </tr>
+          </thead>
+
+          <!--  TABLE BODY  -->
+          <tbody class="bg--light">
+            <tr>
+              <th class="text-center" scope="row">John D.</th>
+              <td class="text-center"><span class="badge badge-pill text-dark">coaching</span></td>
+              <td></td>
+              <!--  active   -->
+              <td>
+                <a href="#" class="link link--orange">
+                  Détails
+                </a>
+              </td>
+              <td>
+                <a href="#" class="link link--dark">
+                  <svg class="bi bi-trash mx-2" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                    <path fill-rule="evenodd"
+                      d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                  </svg>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main> <!-- / END OF MAIN COL  -->
 
   <!--   FOOTER   -->
   <footer class="text-center pt-5 pb-3 mt-5">

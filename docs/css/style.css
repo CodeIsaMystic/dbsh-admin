@@ -42,15 +42,11 @@ body {
   font-weight: 400;
   font-size: var(--textFontSize);
   color: var(--mainSemiDarkBlue);
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .45), rgba(0, 0, 0, .95)), url(../img/bg-admin.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .85), rgba(120, 120, 120, .5), rgba(255, 255, 255, .05)), url(../img/bg-admin.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-/*
-a {
-  text-decoration: none;
-}*/
 
 label {
   margin-bottom: 0;
@@ -60,6 +56,10 @@ label {
 /*  =Font-size  */
 .text-size {
   font-size: var(--textFontSize);
+}
+/*  =Color  */
+.text-in-dark {
+  color: var(--mainDarkBlue);
 }
 
 
