@@ -54,17 +54,17 @@
         <!--  NAVBAR  -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav">
-            <li class="nav-item px-2 <?php if (strpos($view,'category') !== false) : ?>active<?php endif; ?>">
+            <li class="nav-item px-2">
               <a href="index.html" class="nav-link link link--dark">Accueil</a>
             </li>
-            <li class="nav-item px-2 dropdown <?php if ($view == 'contact') : ?>active<?php endif; ?>">
+            <li class="nav-item px-2 dropdown">
               <a href="#" class="nav-link link link--dark">Contacts</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item link link--dark" href="contactAdd.html">Ajouter un contact</a>
                 <a class="dropdown-item link link--dark" href="contactList.html">Liste de contacts</a>
               </div>
             </li>
-            <li class="nav-item px-2 dropdown <?php if (strpos($view,'category') !== false) : ?>active<?php endif; ?>">
+            <li class="nav-item px-2 dropdown">
               <a href="#" class="nav-link link link--dark">Témoignages</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item link link--dark" href="testimAdd.html">Ajouter un témoignage</a>
@@ -76,7 +76,6 @@
           <ul class="navbar-nav ml-4">
             <li class="nav-item align-self-center">
               <a href="login.html" class="nav-link link link--dark">Bienvenue</a>
-              <!--Bienvenue <?= (isset($_SESSION['user']))?$_SESSION['user']['name']:''; ?>-->
             </li>
             <li class="nav-item nav-item pr-3">
               <a href="logout.html" class="nav-link link link--dark">Logout</a>
@@ -127,45 +126,51 @@
 
 
             <div class="row my-2">
-              <div class="col-6 p-3">
+              <div class="col-9 col-md-5 ml-3 pl-md-0">
                 <label class="form-label">Nom</label>
                 <p class="form-control text-size text-in-dark">Doe</p>
               </div>
 
-              <div class="col-6 p-3">
+              <div class="col-9 col-md-5 ml-3 mx-md-auto">
                 <label class="form-label">Prénom</label>
                 <p class="form-control text-size text-in-dark">John</p>
               </div>
             </div>
 
             <div class="row my-2">
-              <div class="col-6 p-3">
+              <div class="col-9 col-md-5 ml-3 pl-md-0">
                 <label class="form-label">Email</label>
                 <p class="form-control text-size text-in-dark">john.doe@gmail.com</p>
               </div>
-              <div class="col-6 p-3">
+              <div class="col-9 col-md-5 ml-3 mx-md-auto">
                 <label class="form-label">Téléphone</label>
                 <p class="form-control text-size text-in-dark">+33 658698514</p>
               </div>
             </div>
 
 
-            <div class="row my-2">
-              <div class="form-group p-3">
-                <label class="form-label">Notes / Texte</label>
-              </div>
-              <div class="form-group p-3">
-                <p class="form-control h-auto text-size text-in-dark">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, officia expedita. Doloribus eius
-                  eligendi quidem soluta molestiae esse, quod minus blanditiis obcaecati cupiditate? Rerum dolores cum
-                  tempora dignissimos iure eligendi itaque laboriosam. Veniam tenetur illum harum, autem beatae, odio
-                  aliquam sapiente minus excepturi velit est!
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat earum, ratione unde explicabo commodi
-                  est consequatur necessitatibus totam odio perspiciatis impedit assumenda cum tempore delectus dolore
-                  iusto obcaecati magnam soluta dignissimos possimus vero aperiam ea. Nisi quibusdam saepe dolores nobis
-                  nulla tenetur fuga hic commodi cum quisquam officia ab soluta illum adipisci veritatis beatae, odit
-                  illo vitae doloribus ex sapiente et excepturi! Maiores, voluptatum magnam.
-                </p>
+            <div class="row mb-2 mt-4 px-3 px-md-0">
+              <div class="col-12">
+
+                <div class="form-group">
+                  <label class="form-label">Notes / Texte</label>
+                </div>
+                <div class="form-group">
+                  <p class="form-control h-auto text-size text-in-dark">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, officia expedita. Doloribus eius
+                    eligendi quidem soluta molestiae esse, quod minus blanditiis obcaecati cupiditate? Rerum dolores cum
+                    tempora dignissimos iure eligendi itaque laboriosam. Veniam tenetur illum harum, autem beatae, odio
+                    aliquam sapiente minus excepturi velit est!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat earum, ratione unde explicabo
+                    commodi
+                    est consequatur necessitatibus totam odio perspiciatis impedit assumenda cum tempore delectus dolore
+                    iusto obcaecati magnam soluta dignissimos possimus vero aperiam ea. Nisi quibusdam saepe dolores
+                    nobis
+                    nulla tenetur fuga hic commodi cum quisquam officia ab soluta illum adipisci veritatis beatae, odit
+                    illo vitae doloribus ex sapiente et excepturi! Maiores, voluptatum magnam.
+                  </p>
+                </div>
+
               </div>
             </div>
 
